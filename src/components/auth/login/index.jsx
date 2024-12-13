@@ -12,10 +12,11 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const onSubmit = async (e) => {
-        e.preventDefault()
-        if(!isSigningIn) {
-            setIsSigningIn(true)
-            await doSignInWithEmailAndPassword(email, password)
+        e.preventDefault() // Prevents the default form submission behavior
+        if(!isSigningIn) { // Checks if the user is not currently signing in
+            setIsSigningIn(true) // Checks if the user is not currently signing in
+            await doSignInWithEmailAndPassword(email, password) // Calls the sign-in function and waits for it to complete
+        // doSendEmailVerification(); // Optional: Uncomment to send email verification after sign-in
             // doSendEmailVerification()
         }
     }
